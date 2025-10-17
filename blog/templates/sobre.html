@@ -5,61 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - Blog de TI</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --cor-primaria: #1e1e1e;
+            --cor-secundaria: #333;
+            --cor-fundo: #f4f4f4;
+            --cor-acento: #0078ff;
+            --texto-claro: #fff;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo);
+            color: #222;
+            line-height: 1.7;
         }
 
         header {
-            background-color: #1e1e1e;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+            color: var(--texto-claro);
             text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
         nav {
-            background-color: #333;
-            overflow: hidden;
+            background-color: var(--cor-secundaria);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
+            color: var(--texto-claro);
             text-decoration: none;
+            padding: 14px 25px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
         }
 
-        nav a:hover {
-            background-color: #575757;
+        nav a:hover,
+        nav a.active {
+            background-color: var(--cor-acento);
         }
 
         .container {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-            background-color: white;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 950px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 40px;
         }
 
-        .container img {
-            float: right;
-            margin-left: 20px;
-            width: 200px;
-            border-radius: 10px;
+        .sobre-conteudo {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .sobre-texto {
+            flex: 1 1 500px;
+        }
+
+        .sobre-texto h2 {
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--cor-acento);
+            padding-left: 10px;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .sobre-texto ul {
+            margin: 15px 0 20px 20px;
+        }
+
+        .sobre-texto li {
+            margin-bottom: 8px;
+        }
+
+        .sobre-imagem {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .sobre-imagem img:hover {
+            transform: scale(1.03);
         }
 
         footer {
-            background-color: #1e1e1e;
-            color: white;
+            background-color: var(--cor-primaria);
+            color: var(--texto-claro);
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+
+            .sobre-conteudo {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sobre-imagem img {
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -72,31 +155,38 @@
 
     <nav>
         <a href="/">Início</a>
-        <a href="">Sobre</a>
+        <a href="/sobre" class="active">Sobre</a>
         <a href="/contato">Contato</a>
     </nav>
 
-    <div class="container">
-        <h2>Sobre o Blog</h2>
-        <img src="https://dsmsolutions.com.br/wp-content/uploads/2021/08/web-4877959_1920.jpg" alt="Tecnologia">
-        <p>Bem-vindo ao <strong>Blog de TI</strong>! Este espaço foi criado para compartilhar conhecimento, novidades e experiências do mundo da <strong>Tecnologia da Informação</strong>.</p>
+    <main class="container">
+        <div class="sobre-conteudo">
+            <div class="sobre-texto">
+                <h2>Sobre o Blog</h2>
+                <p>Bem-vindo ao <strong>Blog de TI</strong>! Este espaço foi criado para compartilhar conhecimento, novidades e experiências do mundo da <strong>Tecnologia da Informação</strong>.</p>
 
-        <p>Nosso objetivo é oferecer conteúdo de qualidade sobre temas como:</p>
-        <ul>
-            <li>Redes de Computadores</li>
-            <li>Desenvolvimento Web e Mobile</li>
-            <li>Segurança da Informação</li>
-            <li>Infraestrutura de TI</li>
-            <li>Novidades e tendências do mercado</li>
-        </ul>
+                <p>Nosso objetivo é oferecer conteúdo de qualidade sobre temas como:</p>
+                <ul>
+                    <li>Redes de Computadores</li>
+                    <li>Desenvolvimento Web e Mobile</li>
+                    <li>Segurança da Informação</li>
+                    <li>Infraestrutura de TI</li>
+                    <li>Tendências e inovações do mercado</li>
+                </ul>
 
-        <p>Este blog é mantido por um entusiasta de tecnologia apaixonado por inovação e aprendizado contínuo. Aqui você encontrará desde tutoriais passo a passo até reflexões sobre o futuro da TI.</p>
+                <p>O blog é mantido por um entusiasta da área, apaixonado por inovação, aprendizado contínuo e por ajudar outras pessoas a crescerem profissionalmente através da tecnologia.</p>
 
-        <p>Obrigado por visitar, e fique à vontade para entrar em contato ou sugerir temas!</p>
-    </div>
+                <p>Obrigado por visitar, e sinta-se à vontade para entrar em contato ou sugerir temas!</p>
+            </div>
+
+            <div class="sobre-imagem">
+                <img src="https://dsmsolutions.com.br/wp-content/uploads/2021/08/web-4877959_1920.jpg" alt="Imagem representando tecnologia">
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Blog de TI. Todos os direitos reservados.</p>
+        <p>© 2025 Blog de TI — Todos os direitos reservados.</p>
     </footer>
 
 </body>

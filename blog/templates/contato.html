@@ -5,90 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Blog de TI</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --cor-primaria: #1e1e1e;
+            --cor-secundaria: #333;
+            --cor-fundo: #f4f4f4;
+            --cor-acento: #0078ff;
+            --texto-claro: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo);
+            color: #222;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #1e1e1e;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+            color: var(--texto-claro);
             text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
         }
 
         nav {
-            background-color: #333;
-            overflow: hidden;
+            background-color: var(--cor-secundaria);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
+            color: var(--texto-claro);
+            padding: 14px 25px;
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover {
-            background-color: #575757;
+        nav a:hover,
+        nav a.active {
+            background-color: var(--cor-acento);
         }
 
         .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 650px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: var(--cor-primaria);
         }
 
         form label {
             display: block;
             margin-top: 15px;
-            margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 600;
         }
 
-        form input, form textarea {
+        form input,
+        form textarea {
             width: 100%;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 6px;
             border: 1px solid #ccc;
-            box-sizing: border-box;
+            margin-top: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: var(--cor-acento);
+            outline: none;
+        }
+
+        form textarea {
+            min-height: 120px;
             resize: vertical;
         }
 
         form button {
             margin-top: 20px;
-            background-color: #1e1e1e;
-            color: white;
+            background: var(--cor-acento);
+            color: var(--texto-claro);
             border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
+            padding: 14px;
+            border-radius: 6px;
             cursor: pointer;
-            width: 100%;
             font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
         }
 
         form button:hover {
-            background-color: #333;
+            background: #005fd1;
         }
 
         footer {
-            background-color: #1e1e1e;
-            color: white;
+            background: var(--cor-primaria);
+            color: var(--texto-claro);
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .container {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+            nav a {
+                padding: 12px 15px;
+            }
         }
     </style>
 </head>
@@ -102,16 +151,28 @@
     <nav>
         <a href="/">Início</a>
         <a href="/sobre">Sobre</a>
-        <a href="">Contato</a>
+        <a href="/contato" class="active">Contato</a>
     </nav>
 
-    <div class="container">
+    <main class="container">
         <h2>Entre em Contato</h2>
         <form action="#" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
 
-            <label for="email">E-mail:</label>
+            <label for="email">E-mail</label>
             <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
 
-            <label for="mensagem">Mensagem:</label>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
+
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Blog de TI — Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
