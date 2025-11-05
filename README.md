@@ -31,15 +31,14 @@ A página inicial contém **banner**, **posts recentes** e **área de newsletter
 |---------------|--------------|-----------|
 | 🐍 **Python** | Linguagem principal do backend | Desenvolvimento da lógica e integração do Django |
 | 🌐 **Django** | Framework web robusto em Python | Criação da aplicação, rotas, views, templates e banco de dados |
-| 🗃️ **SQLite** | Banco de dados leve e embutido | Armazena posts, categorias e informações do blog |
 | 🧱 **HTML/CSS** | Estrutura e estilo das páginas web | Layout responsivo, menus e formulários |
 | 🐙 **Git/GitHub** | Controle de versão e hospedagem | Versionamento e compartilhamento do projeto |
 
 ---
 
-## 🖼️ Capturas de Tela do Projeto
+## 📸 Demonstração  
 
-> ⚠️ Não há imagens no repositório, mas o projeto funciona visualmente da seguinte forma:
+![Demo da aplicação](public/demo.gif)
 
 - 🏠 **Página Inicial:** Banner de destaque, posts em cards com títulos e resumos, sidebar com categorias e posts populares.  
 - 👨‍💻 **Página Sobre:** Texto explicativo sobre o blog com imagens ilustrativas e listas temáticas.  
