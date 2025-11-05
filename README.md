@@ -38,7 +38,7 @@ A página inicial contém **banner**, **posts recentes** e **área de newsletter
 
 ## 📸 Demonstração  
 
-![Demo da aplicação](public/demo.gif)
+![Demo da aplicação](demo.gif)
 
 - 🏠 **Página Inicial:** Banner de destaque, posts em cards com títulos e resumos, sidebar com categorias e posts populares.  
 - 👨‍💻 **Página Sobre:** Texto explicativo sobre o blog com imagens ilustrativas e listas temáticas.  
