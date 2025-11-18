@@ -1,4 +1,4 @@
-# 🐍 projeto_django 🌐
+# 🐍 blog_django 🌐
 
 ## 🧾 Introdução
 
